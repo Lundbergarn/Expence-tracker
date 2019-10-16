@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './components/Navbar';
+import './index.css';
+import AmountContextProvider from './contexts/AmountContext';
+import AmountForm from './components/AmountForm';
+import AmountList from './components/AmountList';
+import Container from './components/Container';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AmountContextProvider>
+        <Navbar />
+        <Container>
+          <AmountForm />
+          <AmountList />
+        </Container>
+      </AmountContextProvider>
     </div>
   );
 }
