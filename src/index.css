@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
+  background: #ddd;
 }
 
 code {
@@ -14,8 +15,11 @@ code {
 }
 
 .App {
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
+  background: white;
+  padding-bottom: 50px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14);
 }
 form {
   margin-top: 30px;
@@ -32,6 +36,7 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14);
 }
 .navbar {
   background: #46af15;
@@ -47,10 +52,6 @@ input[type=submit] {
 td {
   color: #202020;
 }
-td:hover {
-  opacity: 0.7;
-  text-decoration: line-through;
-}
 table {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -62,15 +63,14 @@ table td, table th {
   border: 1px solid #ddd;
   padding: 8px;
 }
-
-
-table tr:hover {background-color: #ddd;}
-
 table th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #621216;
+  /* background-color: #621216; */
+  /* color: white; */
+}
+td {
   color: white;
 }
 
@@ -79,3 +79,11 @@ table th {
   float: left;
 }
 
+.brand-logo .material-icons {
+  padding-top: 6px;
+  font-size: 30px;
+}
+
+.center {
+  text-align: center;
+}

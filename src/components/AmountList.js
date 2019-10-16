@@ -25,6 +25,8 @@ const AmountList = () => {
             <th></th>
             <th>Balance</th>
             <th>Total amount</th>
+            <th></th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -32,13 +34,18 @@ const AmountList = () => {
             <td></td>
             <td>{totalAmount().props.children >= 0 ? '+' : '-'}</td>
             <td>{totalAmount()}</td>
+            <td></td>
+            <td></td>
           </tr>
         </tbody>
+        <br></br>
         <thead>
           <tr>
             <th>Type</th>
-            <th>Expence / Income</th>
+            <th>Exp / Inc</th>
             <th>Amount</th>
+            <th>Update</th>
+            <th>Erase</th>
           </tr>
         </thead>
         <tbody>

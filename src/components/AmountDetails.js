@@ -7,11 +7,26 @@ const AmountDetails = ({ amount }) => {
     <tr
       className="amount__item"
       style={amount.incExp === '-' ? { background: "#d93436" } : { background: "#46af15" }}
-      onClick={() => dispatch({ type: 'REMOVE_AMOUNT', id: amount.id })}
     >
       <td>{amount.title}</td>
-      <td>{amount.incExp}</td>
+
+      <td style={{ fontSize: '1.6rem', lineHeight: '1rem' }}>
+        {amount.incExp}
+      </td>
+
       <td>{amount.amount}</td>
+
+      <td className="center">
+        <i class="material-icons">edit</i>
+      </td>
+
+      <td
+        className="center"
+        onClick={() => dispatch({ type: 'REMOVE_AMOUNT', id: amount.id })}
+      >
+        <i class="material-icons">clear</i>
+      </td>
+
     </tr>
   );
 };
