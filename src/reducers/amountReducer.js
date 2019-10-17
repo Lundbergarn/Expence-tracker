@@ -11,16 +11,14 @@ export const amountReducer = (state, action) => {
       return state.filter(amount => amount.id !== action.id)
     case 'UPDATE_AMOUNT':
       {
-        return state.forEach(amount => {
-          if (amount.id === action.id) {
-            return {
-              title: action.money.title,
-              amount: action.money.amount,
-              incExp: action.money.incExp,
-              id: action.id
-            }
+        let updatedList = state.map(amount => {
+          if (amount.id === action.money.id) {
+            amount.title = action.money.title;
+            amount.amount = action.money.amount;
           }
+          return amount;
         })
+        return [...updatedList]
       }
     default:
       return state

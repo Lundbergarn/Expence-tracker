@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   background: #ddd;
+  color: #222222;
 }
 
 code {
@@ -21,37 +22,53 @@ code {
   padding-bottom: 50px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14);
 }
+
 form {
   margin-top: 30px;
 }
+
 .radio {
   padding-right: 20px;
+  margin: 20px 0;
+  float: left;
 }
+
 input[type=submit] {
   width: 100%;
   background-color: #46af15;
   color: white;
   padding: 14px 20px;
-  margin: 16px 0;
+  margin: 5px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14);
 }
+
+
 .navbar {
   background: #46af15;
 }
+
 .navbar__list li {
   padding: 0 15px;
   position: relative;
 }
+
+.brand-logo .material-icons {
+  padding-top: 6px;
+  font-size: 30px;
+}
+
+td {
+  color: white;
+}
+
 .amount__item {
   cursor: pointer;
   border-bottom: 1px solid #ddd;
 }
-td {
-  color: #202020;
-}
+
 table {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -63,25 +80,11 @@ table td, table th {
   border: 1px solid #ddd;
   padding: 8px;
 }
+
 table th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  /* background-color: #621216; */
-  /* color: white; */
-}
-td {
-  color: white;
-}
-
-.radio {
-  margin-top: 10px;
-  float: left;
-}
-
-.brand-logo .material-icons {
-  padding-top: 6px;
-  font-size: 30px;
 }
 
 .center {

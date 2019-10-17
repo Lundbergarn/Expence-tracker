@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import { AmountContext } from '../contexts/AmountContext';
 
-const AmountDetails = ({ amount }) => {
+const AmountDetails = ({ amount, updateState }) => {
   const { dispatch } = useContext(AmountContext);
+
   return (
     <tr
       className="amount__item"
@@ -16,15 +17,18 @@ const AmountDetails = ({ amount }) => {
 
       <td>{amount.amount}</td>
 
-      <td className="center">
-        <i class="material-icons">edit</i>
+      <td
+        className="center"
+        onClick={() => updateState({ ...amount, title: amount.title, amount: amount.amount, incExp: amount.incExp, id: amount.id })}
+      >
+        <i className="material-icons">update</i>
       </td>
 
       <td
         className="center"
         onClick={() => dispatch({ type: 'REMOVE_AMOUNT', id: amount.id })}
       >
-        <i class="material-icons">clear</i>
+        <i className="material-icons">clear</i>
       </td>
 
     </tr>

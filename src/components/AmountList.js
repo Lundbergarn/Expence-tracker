@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import { AmountContext } from '../contexts/AmountContext';
 import AmountDetails from './AmountDetails';
 
-const AmountList = () => {
+const AmountList = (props) => {
   const { amounts } = useContext(AmountContext);
 
   const totalAmount = () => {
     let total = 0;
-    let inc = amounts.map((acc) => {
+    amounts.map((acc) => {
       if (acc.incExp === '+') {
         return total += parseInt(acc.amount);
       } else {
@@ -38,7 +38,6 @@ const AmountList = () => {
             <td></td>
           </tr>
         </tbody>
-        <br></br>
         <thead>
           <tr>
             <th>Type</th>
@@ -50,7 +49,7 @@ const AmountList = () => {
         </thead>
         <tbody>
           {amounts.map(amount => {
-            return (<AmountDetails amount={amount} key={amount.id} />);
+            return (<AmountDetails amount={amount} key={amount.id} updateState={props.updateState} />);
           })}
         </tbody>
       </table>

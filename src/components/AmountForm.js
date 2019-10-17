@@ -1,15 +1,22 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { AmountContext } from '../contexts/AmountContext';
 
-const AmountForm = () => {
+const AmountForm = (props) => {
   const { dispatch } = useContext(AmountContext);
-  const [title, setTitle] = useState('');
-  const [amount, setAmount] = useState('');
+  const [title, setTitle] = useState(props.update.title || '');
+  const [amount, setAmount] = useState(props.update.amount || '');
   const [incExp, setIncExp] = useState('-');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({ type: 'ADD_AMOUNT', money: { title, amount, incExp } })
+    setTitle('');
+    setAmount('');
+  }
+
+  const handleUpdate = (e) => {
+    e.preventDefault();
+    dispatch({ type: 'UPDATE_AMOUNT', money: { title, amount, id: props.update.id } })
     setTitle('');
     setAmount('');
   }
@@ -39,7 +46,7 @@ const AmountForm = () => {
             onChange={(e) => setIncExp(e.target.value)}
             checked={incExp === '-'}
           />
-          <span>-</span>
+          <span style={{ fontSize: '1.6rem' }}> - </span>
         </label>
       </div>
       <div className="radio">
@@ -50,11 +57,12 @@ const AmountForm = () => {
             onChange={(e) => setIncExp(e.target.value)}
             checked={incExp === '+'}
           />
-          <span>+</span>
+          <span style={{ fontSize: '1.6rem' }}> + </span>
         </label>
       </div>
 
       <input onClick={handleSubmit} type="submit" value="Add amount" />
+      <input onClick={handleUpdate} type="submit" value="Add update" />
     </form>
   )
 };
